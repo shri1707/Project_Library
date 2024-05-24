@@ -1,12 +1,6 @@
-const body= document.querySelector(".main")
+const main= document.querySelector(".main")
 const form = document.querySelector("form")
-const myLibrary= [
-    {title: "xyz1", author: "abc", pages: 123, read: "Yes"},
-    {title: "xyz2", author: "abc", pages: 123, read: "Yes"},
-    {title: "xyz3", author: "abc", pages: 123, read: "Yes"},
-    {title: "xyz4", author: "abc", pages: 123, read: "Yes"}
-
-]
+const myLibrary= []
 function Books(title, author, pages, read){
     this.title = title
     this.author= author
@@ -21,10 +15,11 @@ function addBookToLibrary(book) {
 let read
 
 function display(){
+    main.innerHTML= ""
     for (let i = 0; i < myLibrary.length; i++) {
         const card= document.createElement("div")
         card.classList.add("card")
-        body.appendChild(card)
+        main.appendChild(card)
         const title= document.createElement("div")
         title.classList.add("title")
         const author= document.createElement("div")
@@ -35,35 +30,38 @@ function display(){
         read.classList.add("read")
         const remove= document.createElement("button")
         remove.classList.add("remove")
+        remove.innerText= "Remove Book"
         remove.addEventListener("click", ()=>{
-            body.removeChild(card)
+            main.removeChild(card)
+            myLibrary.splice(i, 1);
         })
         card.appendChild(title)
         card.appendChild(author)
         card.appendChild(pages)
         card.appendChild(read)
         card.appendChild(remove)
-        title.innerText=myLibrary[i]["title"]
-        author.innerText=myLibrary[i]["author"]
-        pages.innerText=myLibrary[i]["pages"]
-        read.innerText=myLibrary[i]["read"]
-        if(read.innerText=="Yes" | read.innerText=="yes"){
+        title.innerText="Title:" + " " + myLibrary[i]["title"]
+        author.innerText="Author:" + " " + myLibrary[i]["author"]
+        pages.innerText="Pages:" + " " + myLibrary[i]["pages"]
+        read.innerText= "Read:"+ " " + myLibrary[i]["read"]
+        if(read.innerText=="Read: Yes" | read.innerText=="Read: yes"){
             read.innerText="Already Read"
         }
-        else if(read.innerText=="No" | read.innerText=="no"){
+        else if(read.innerText=="Read: No" | read.innerText=="Read: no"){
             read.innerText="Not Read"
         }
-    
     }
-    read.addEventListener("click",()=>{
-        if(read.innerText=="Already Read"){
-            read.innerText="Not Read"
-        }
-        else if(read.innerText=="Not Read"){ 
-            read.innerText="Already Read"
-        }
-    })
 }
+main.addEventListener("click", (event) => {
+    if (event.target.classList.contains("read")) {
+      const readButton = event.target;
+      if (readButton.innerText === "Already Read") {
+        readButton.innerText = "Not Read";
+      } else {
+        readButton.innerText = "Already Read";
+      }
+    }
+  });
 
 
 

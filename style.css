@@ -1,24 +1,40 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+h1{
+    text-align: center;
+    text-shadow: 1px 2px 2px #fb7185;
+    margin: 80px 0;
+}
 body{
     display: flex;
 }
 
-.main{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-
-}
 
 form{
-    width: 400px;
-    background-color: bisque;
+    position: relative;
+    width: 300px;
     padding: 20px;
     height: 100vh;
+    z-index: 1;
+    background-image: url("https://passporttoeden.com/wp-content/uploads/2020/05/LibrariesInTheUSA_GeorgePeabodyLibrary-1-of-1.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
 }
 
 .container{
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    width: 200px;
     
+}
+label{
+    color: black;
+    font-size: large;
+    font-weight: bold;
 }
 
 input:focus{
@@ -35,12 +51,52 @@ input{
     width: 100%;
     border: solid #E5E7EB;
     border-radius: 4px;
-    margin: 10px;
+    margin: 10px 0px;
     
 }
 
+.submit{
+    border-radius: 5px;
+    border: none;
+    color: white;
+    background-color: #596D48;
+    cursor: pointer;
+    height: 50px;
+    margin-top: 30px;
+}
+
+.main{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: max-content;
+    gap: 15px;
+    overflow-y: auto;
+    height: 100vh;
+
+}
 .card{
-    width: 100px;
-    height: 100px;
-    background-color: brown
+    width: 285px;
+    height: 335px;
+    background-color: #7dd3fc;
+    padding: 30px;
+    font-size: 45px;
+    text-align: center;
+}
+
+.read{
+    width: 180px;
+    height: 40px;
+    border: none;
+    border-radius: 25px;
+    color: white;
+    background: black;
+}
+
+.remove{
+    width: 180px;
+    height: 40px;
+    border: none;
+    border-radius: 25px;
+    color: rgb(0, 0, 0);
+    background: rgb(255, 255, 255);
 }
