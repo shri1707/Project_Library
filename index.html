@@ -4,8 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <form action="#">
+        <h2>Library</h2>
+        <div class="container">
+            <label for="name">Title: </label>
+            <input type="text" id="name" required>
+        </div>
+        <div class="container">
+            <label for="writer">Author: </label>
+            <input type="text" id="writer" required>
+        </div>
+        <div class="container">
+            <label for="pageNo">Pages: </label>
+            <input type="number" id="pageNo" required>
+        </div>
+        <div class="container">
+            <label for="did">Read: </label>
+            <input type="text" id="did" placeholder="Yes/No" pattern="[Yy]es| [Nn]o" required>
+        </div>
+        <div class="container">
+            <button class="submit">Add New Book</button>
+        </div>
+    </form>
+    <div class="main">
+        
+    </div>
     <script src="script.js"></script>
 </body>
 </html>

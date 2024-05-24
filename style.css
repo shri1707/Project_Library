@@ -1,0 +1,46 @@
+body{
+    display: flex;
+}
+
+.main{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+
+}
+
+form{
+    width: 400px;
+    background-color: bisque;
+    padding: 20px;
+    height: 100vh;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    
+}
+
+input:focus{
+    outline: none;
+    border: 1px solid rgb(61, 255, 12);
+    box-shadow: 2px 2px 3px #ccc;
+}
+
+input{
+    font-size: 1rem;
+    padding: 4px;
+    border: 1px solid rgb(167, 167, 167);
+    border-radius: 5px;
+    width: 100%;
+    border: solid #E5E7EB;
+    border-radius: 4px;
+    margin: 10px;
+    
+}
+
+.card{
+    width: 100px;
+    height: 100px;
+    background-color: brown;
+}
